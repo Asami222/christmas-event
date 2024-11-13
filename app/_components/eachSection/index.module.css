@@ -1,0 +1,124 @@
+.product {
+    color: var(--header);
+    width: max(55%, 800px);
+    margin: 0 auto;
+    background-color: var(--white);
+    border: var(--border);
+    border-radius: 90px;
+    margin-bottom: 320px;
+}
+.text {
+    padding: 180px clamp(1rem, 8vw, 9.5rem) 0;
+}
+.product p:nth-of-type(1){
+    font-size: 2rem;
+}
+.product h5 {
+    font-size: 5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    font-feature-settings: "palt" 1;
+}
+.product p:nth-of-type(2) {
+    font-size: 2rem;
+    text-align: justify;
+    line-height: 1.9;
+    margin-top: 2em;
+}
+.img {
+    text-align: center;
+    z-index: 2;
+    margin: 0 20px 20px;
+}
+.clothes {
+    position: relative;
+}
+.clothes::before {
+    position: absolute;
+    content: "";
+    width: 750px;
+    height: 242px;
+    top: -80px;
+    left: -15%;
+    background: url("/main/clothesHeading.svg");
+}
+.clothes .img {
+    padding-right: 100px;
+}
+.toys {
+    position: relative;
+}
+.toys h5 span {
+    margin: 0 -0.1em;
+}
+.toys .img {
+    margin-top: 40px;
+}
+.toys .img img {
+    width: 80%;
+    height: auto;
+}
+.toys::before {
+    position: absolute;
+    content: "";
+    width: 750px;
+    height: 242px;
+    top: -80px;
+    left: -15%;
+    background: url("/main/toysHeading.svg");
+}
+.foods {
+    position: relative;
+}
+.foods::before {
+    position: absolute;
+    content: "";
+    width: 750px;
+    height: 242px;
+    top: -80px;
+    left: -15%;
+    background: url("/main/foodHeading.svg");
+}
+.cookie {
+    position: absolute;
+    top:20px;
+    z-index: 3;
+}
+.foods .text {
+    padding-top: 200px;
+}
+.foods .img {
+    margin-top: 20px;
+}
+/* cafeArea ----------------------------------------------*/
+
+.cafe {
+    position: relative;
+    border: none;
+    margin-bottom: 0;
+}
+.cafe::before {
+    position: absolute;
+    content: "";
+    width: 587px;
+    height: 100px;
+    top: -60px;
+    left: 30px;
+    background: url("/main/headingCafe.svg");  
+}
+.cafe .text {
+    text-align: center;
+    padding: 100px 95px 0;
+}
+.cafe h5 {
+    margin-top: 20px;
+    line-height: 0.7;
+}
+.cafe h5 span {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-top: -10px;
+}
+.cafe .img {
+    padding: 70px 35px 40px;
+}

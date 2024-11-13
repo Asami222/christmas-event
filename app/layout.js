@@ -1,16 +1,8 @@
-import localFont from "next/font/local";
+
+import { Noto_Serif_JP } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const noto_serif_jp = Noto_Serif_JP({ subsets: ["latin"], variable: '--font-noto-serif' })
 
 export const metadata = {
   title: "Create Next App",
@@ -19,8 +11,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ja" className={`${noto_serif_jp.variable}`}>
+      <body>
         {children}
       </body>
     </html>

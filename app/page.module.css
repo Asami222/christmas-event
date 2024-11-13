@@ -1,168 +1,297 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+/*-----------------------------------------------------------------------------------------------------
+ヘッダーエリア
+-----------------------------------------------------------------------------------------------------*/
+.header {
+  height: 50px;
+  padding: 7px 60px;
+  margin: 0 auto;
 }
-
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
+/*-----------------------------------------------------------------------------------------------------
+ファーストビューエリア
+-----------------------------------------------------------------------------------------------------*/
 .main {
+  background-color: #fff;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+.shadow {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+/*トップイメージ部分のグレイの背景*/
+.top {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  background-color: #E5E5E5;
+  padding-top: 90px;
+  padding-bottom: 150px;
+  top: 0;
+  z-index: 0;
+}
+/*
+背景を斜めにするために背景の前にに２層の擬似要素を追加した。::afterは透明度を追加するため。
+（下のセクションの色に微妙に白が混じっているため、::beforeに透明度を追加するだけでは同じ色にならない）色は下のセクションの色にしている。
+*/
+.top::before {
+  content: "";
+  position: absolute;
+  bottom:0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 0 0 100vw;
+  border-color: transparent transparent transparent #8CBBD5;
+  z-index: -2;
+}
+.top::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 0 0 100vw;
+  border-color: transparent transparent transparent #fff;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.headingSub {
+  font-weight: 600;
+  font-size: 2.2rem;
+  color: #925151;
+  margin-top: 0.5em;
+}
+
+.hero {
+  text-align: center;
+  max-width: 1440px;
+  height: auto;
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+}
+
+.copyContainer {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: 2;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
+.copyContainer > p {
+  margin-top: -40px;
+}
+
+.copy {
+  text-align: center;
   margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
 }
 
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
+.copy p:nth-child(1) {
+  font-size: clamp(1rem, -1.5rem + 13vw, 9.6rem);
+  line-height: 1.1;
+  margin-top: 10px;
 }
 
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
+.copy p:nth-child(1) .narrow {
+  letter-spacing: -0.2em;
+}
+
+.copy p:nth-child(1) .smallDate {
+  font-size: 2.4rem;
+}
+
+.copy p:nth-child(1) .dateLine {
+  font-size: 5rem;
+  margin: 0 5px;
+}
+
+.copy p:nth-child(2) {
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
+.copy p:nth-child(3) {
+  font-size: clamp(1rem, 0.7rem + 1vw, 1.8rem);
   font-weight: 500;
+  line-height: 2.1;
+  margin-top: clamp(1rem, 3.5vw, 3.5rem);
+}
+/*-----------------------------------------------------------------------------------------------------
+メインエリア
+-----------------------------------------------------------------------------------------------------*/
+/*
+メインエリアのブルーの画像背景
+*/
+.featureContainer {
+  position: relative;
+  background-image: url("/main/main.webp");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 1440px auto;
+  background-color: #8CBBD5;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.featureContainer::before {
+  content: "";
+  position: absolute;
+  bottom:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0.3;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
+.featureContainer h4 {
+  position: absolute;
+  top: -75px;
+  left: 30%;
+  vertical-align:baseline;
 }
 
-.footer {
-  grid-row-start: 3;
+.featureContainer h4 span{
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 400;
+  padding: 10px 0 0 20px;
+  vertical-align: middle;
+}
+
+.mainFlex {
+  padding: 250px 0 1px;
+}
+
+.cafeContainer {
+  position: relative;
+  background-color: #E3CBCB;
+  padding: 200px 0 300px;
+}
+
+.kidsanddog {
+  position: absolute;
+  top: 900px;
+  left: 40px;
+  z-index: 2;
+}
+/*-----------------------------------------------------------------------------------------------------
+サンタクロースエリア
+-----------------------------------------------------------------------------------------------------*/
+
+.santaContainer {
+  background-color: #326B49;
+  padding-top: 75px;
+}
+.santaContainer h4 {
+  text-align: center;
+}
+.santaContainer h5 {
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--white);
+  margin: 30px 0 40px;
+}
+.cardContainer {
+  position: relative;
+  width: max(65%, 800px);
+  background-color: #F0EDED;
+  border-radius: 70px;
+  padding: 40px 70px 0;
+  margin: 0 auto;
+  z-index: 2;
+}
+.cardTitle {
   display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
 }
-
-.footer img {
-  flex-shrink: 0;
+.letterScript {
+  width: 70%;
 }
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
+.santaDate {
+  width: 30%;
+  text-align: center;
+  padding-bottom: 10px;
 }
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
+.santaDate p:nth-child(1) { 
+  font-weight: 400;
+  font-size: 2rem;
+  color: #D82616;
 }
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
+.santaDate p:nth-child(2) {
+  font-size: clamp(2rem, 4vw, 6rem);
+  line-height: 0.8;
+  color: #D82616;
+  padding-top: 5px;
+}
+.cardTexts > p {
+  font-size: clamp(1rem,2.5vw, 3rem);
+  text-align: justify;
+  line-height: 1.8;
+  color: #D82616;
+}
+.santaIllustContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.candy {
+  padding: 35px;
+  align-self: flex-end;
+}
+.santaIllust {
+  bottom: 0;
+  right: 50px;
+}
+.santaimgShadow {
+  box-shadow: 10px 10px 9px 10px rgba(10, 45, 15, 1);
+}
+.santaBottom {
+  display: flex;
+  justify-content: space-between;
+}
+.santaImageflex {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 7% clamp(1rem, -1.5rem + 8vw, 10rem) 5%;
+  justify-content: flex-end;
+}
+.santaImg {
+  transform: rotate(10deg);
+  z-index: 1;
+  margin-left: 100px;
+}
+.tonakaiImg {
+  transform: rotate(-13deg);
+  margin-top: -50px;
+  margin-bottom: 20px;
+}
+.doorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-end;
+  margin-left: 15%;
+}
+.come {
+  padding: 20px 20px 25px 0;
+  transform: rotate(-10deg);
+}
+.door {
+ margin-left: 10%;
+}
+.copyright {
+  padding: 15px;
+  text-align: center;
+}
+.copyright small {
+  font-family: sans-serif;
+  font-size: 1rem;
 }
