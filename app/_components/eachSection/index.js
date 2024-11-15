@@ -5,9 +5,32 @@ import styles from "./index.module.css";
 
 const m_plus_1p = M_PLUS_1p({ weight: ['400'], subsets: ["latin"] })
 
-export default function EachSection({id, floor, title, subtitle, text, image, image2}) {
+export default function EachSection({id, floor, title, subtitle, text, image, image2, ribonUrl, cafeUrl}) {
     return (
-        <section className={cx(styles.product, styles.shadow, styles[`${id}`])}>
+        <section className={styles.wrapper}>
+        { ribonUrl &&
+            <div className={styles.ribon}>
+                <Image
+                 src={ribonUrl}
+                 alt={title}
+                 width={750}
+                 height={242}
+                 sizes="(min-width: 750px) 750px, 52vw"
+                />
+            </div>
+        }
+        { cafeUrl &&
+            <div className={styles.cafeHead}>
+                <Image
+                 src={cafeUrl}
+                 alt={title}
+                 width={587}
+                 height={100}
+                 sizes="(min-width: 587px) 587px, 41vw"
+                />
+            </div>
+        }
+        <div className={cx(styles.product, styles.shadow, styles[`${id}`])}>
             <div className={styles.text}>
                 { image2 && 
                   <div className={styles.cookie}>
@@ -17,6 +40,7 @@ export default function EachSection({id, floor, title, subtitle, text, image, im
                         width={image2.width}
                         height={image2.height}
                         sizes={image2.sizes}
+                        style={{width: "100%", height: 'auto'}}
                     />
                   </div>
                 }
@@ -33,6 +57,7 @@ export default function EachSection({id, floor, title, subtitle, text, image, im
                  sizes={image.sizes}
                 />
             </div>
+        </div>
         </section>
     )
 }

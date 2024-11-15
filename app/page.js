@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import data from "./_components/data";
 import EachSection from "./_components/eachSection";
@@ -11,6 +12,7 @@ const m_plus_1p = M_PLUS_1p({ weight: ['400'], subsets: ["latin"] })
 
 
 export default function Home() {
+
     return (
         <>
             <header className={styles.header}>
@@ -35,7 +37,6 @@ export default function Home() {
                             width={1334}
                             height={266}
                             sizes="(min-width: 667px) 667px, 46.3vw"
-                            style={{width: "50%", height: 'auto'}}
                         />
                     </h2>
                     <h3 className={styles.headingSub}>過去最高のクリスマスを自分自身や大切な人へ贈りましょう</h3>
@@ -98,15 +99,6 @@ export default function Home() {
                     </article>
                 </section>
                 <article className={styles.cafeContainer}>
-                    <h4>
-                        <Image
-                            src="/main/cafeRestaurant.svg"
-                            alt="カフェレストラン"
-                            width={587}
-                            height={100}
-                            sizes="(min-width: 500px) 500px, 35vw"
-                        />
-                    </h4>
                         {data.bottom.map((content,i) => (
                             <EachSection key={i} {...content} />
                         ))}
@@ -137,10 +129,10 @@ export default function Home() {
                             <div className={styles.cardTitle}>
                                 <div className={styles.letterScript}>
                                     <Image
-                                        src="/main/specialEvent.svg"
+                                        src="/main/santaclausScript.svg"
                                         alt="サンタクロースへの手紙"
-                                        width={560}
-                                        height={165}
+                                        width={1120}
+                                        height={330}
                                         sizes="(min-width: 560px) 560px, 39vw"
                                         style={{width: "100%", height: 'auto'}}
                                     />
@@ -208,7 +200,6 @@ export default function Home() {
                                     height={757}
                                     sizes="(min-width: 500px) 500px, 35vw"
                                     className={styles.santaimgShadow}
-                                    style={{width: "100%", height: 'auto'}}
                                 />
                             </p>
                             <p className={styles.tonakaiImg}>
@@ -219,7 +210,6 @@ export default function Home() {
                                     height={227}
                                     sizes="(min-width: 350px) 350px, 24.3vw" 
                                     className={styles.santaimgShadow}
-                                    style={{width: "100%", height: 'auto'}}
                                 />
                             </p>
                         </div>
