@@ -6,14 +6,12 @@ import template from "@/assets/particlesjs-config.json";
 
 export default function ParticlesBackrgound({ children }) {
 
-    const params = template
+    const params = template;
 
     const particlesInit = useCallback(async engine => {
         console.log(engine);
         await loadSlim(engine);
 
-        // LOAD ANY ONE 
-        // await loadFull(engine);
     }, []);
 
     const particlesLoaded = useCallback(async container => {

@@ -35,7 +35,7 @@
     font-size: clamp(0.813rem, 0.57rem + 1.03vw, 1.5rem);
 }
 .text h5 {
-    font-size: clamp(1.5rem, 0.708rem + 3.38vw, 3.75rem);
+    font-size: clamp(1.5rem, 0.796rem + 3vw, 3.5rem);
     font-weight: 500;
     line-height: 1.1;
     font-feature-settings: "palt" 1;
