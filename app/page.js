@@ -23,6 +23,7 @@ export default function Home() {
                         width={152}
                         height={18}
                         sizes="(min-width: 152px) 152px, 11vw"
+                        priority
                     />
                 </h1>
             </header>
@@ -36,7 +37,6 @@ export default function Home() {
                             width={1334}
                             height={266}
                             sizes="(min-width: 667px) 667px, 46.3vw"
-                            priority
                         />
                     </h2>
                     <h3 className={styles.headingSub}>過去最高のクリスマスを自分自身や大切な人へ贈りましょう</h3>
@@ -48,7 +48,6 @@ export default function Home() {
                             width={2880}
                             height={1352}
                             sizes="(min-width: 1440px) 1440px, 100vw"
-                            priority
                         />  
                     </figure>
                     <div className={styles.copyContainer}>
