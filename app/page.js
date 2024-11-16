@@ -37,6 +37,7 @@ export default function Home() {
                             width={1334}
                             height={266}
                             sizes="(min-width: 667px) 667px, 46.3vw"
+                            priority
                         />
                     </h2>
                     <h3 className={styles.headingSub}>過去最高のクリスマスを自分自身や大切な人へ贈りましょう</h3>
