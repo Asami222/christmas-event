@@ -10,10 +10,8 @@ const italiana = Italiana({ subsets: ["latin"], weight: ["400"] });
 const square_peg = Square_Peg({ subsets: ["latin"], weight: ["400"] });
 const m_plus_1p = M_PLUS_1p({ weight: ['400'], subsets: ["latin"] });
 
-const sleep = (msec) => new Promise((resolve) => setTimeout(resolve, msec));
 
 export default async function Home() {
-    await sleep(3000);
     return (
         <>
             <header className={styles.header}>
