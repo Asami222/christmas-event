@@ -48,6 +48,7 @@ export default function Home() {
                             width={2880}
                             height={1352}
                             sizes="(min-width: 1440px) 1440px, 100vw"
+                            priority
                         />  
                     </figure>
                     <div className={styles.copyContainer}>

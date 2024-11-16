@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 
 const m_plus_1p = M_PLUS_1p({ weight: ['400'], subsets: ["latin"] })
 
-export default function EachSection({id, floor, title, subtitle, text, image, image2, ribonUrl, cafeUrl}) {
+export default function EachSection({id, floor, title, subtitle, text, image, ribonUrl, cafeUrl}) {
     return (
         <section className={styles.wrapper}>
         { ribonUrl &&
