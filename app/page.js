@@ -11,7 +11,7 @@ const square_peg = Square_Peg({ subsets: ["latin"], weight: ["400"] });
 const m_plus_1p = M_PLUS_1p({ weight: ['400'], subsets: ["latin"] });
 
 
-export default async function Home() {
+export default function Home() {
     return (
         <>
             <header className={styles.header}>
