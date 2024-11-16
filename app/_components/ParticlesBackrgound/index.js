@@ -2,7 +2,7 @@
 import React, { useCallback } from 'react'
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
-import template from "@/assets/particlesjs-config.json";
+import template from "@/public/assets/particlesjs-config.json";
 
 export default function ParticlesBackrgound({ children }) {
 
