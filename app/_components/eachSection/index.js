@@ -32,18 +32,6 @@ export default function EachSection({id, floor, title, subtitle, text, image, im
         }
         <div className={cx(styles.product, styles.shadow, styles[`${id}`])}>
             <div className={styles.text}>
-                { image2 && 
-                  <div className={styles.cookie}>
-                    <Image
-                        src={image2.src}
-                        alt={image2.alt}
-                        width={image2.width}
-                        height={image2.height}
-                        sizes={image2.sizes}
-                        style={{width: "100%", height: 'auto'}}
-                    />
-                  </div>
-                }
                 <p>{floor}</p>
                 <h5>{title}{subtitle && <span>{subtitle}</span>}</h5>
                 <p className={m_plus_1p.className}>{text}</p>

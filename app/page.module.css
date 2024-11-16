@@ -120,7 +120,8 @@
 }
 
 .copy p:nth-child(1) .dateLine {
-  font-size: clamp(0.75rem, -0.746rem + 6.38vw, 5rem);
+  font-size: clamp(1.25rem, -0.114rem + 6.82vw, 5rem);
+  font-weight: 600;
   margin: 0 5px;
 }
 

@@ -41,13 +41,6 @@ const data = {
                 height: 584,
                 sizes: "(min-width: 763px) 763px, 53vw",
             },
-            image2: {
-                src: "/main/foods2.webp",
-                alt: "クリスマスのお菓子",
-                width: 532,
-                height: 352,
-                sizes: "(min-width: 266px) 266px, 18vw",
-            },
             ribonUrl: "/main/foodHeading.svg",
         },
     ],
