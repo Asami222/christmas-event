@@ -158,10 +158,10 @@ export default function Home() {
                             </p>
                             <p className={styles.santaIllust}>
                                 <Image
-                                    src="/main/santaclaus.webp"
+                                    src="/main/santa.webp"
                                     alt="サンタクロース"
                                     width={1286}
-                                    height={918}
+                                    height={974}
                                     sizes="(min-width: 643px) 643px, 45vw"
                                     style={{width: "100%", height: 'auto'}}
                                 />
